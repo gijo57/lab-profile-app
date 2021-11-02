@@ -1,0 +1,8 @@
+POST http://localhost:3000/auth/edit
+Content-Type: application/json
+
+{
+    "username": "bobby",
+    "course": "WebDev",
+    "campus": "Madrid"
+}
