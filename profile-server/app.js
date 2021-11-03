@@ -10,9 +10,16 @@ const serveFavicon = require('serve-favicon');
 const basicAuthenticationDeserializer = require('./middleware/basic-authentication-deserializer.js');
 const bindUserToViewLocals = require('./middleware/bind-user-to-view-locals.js');
 const authenticationRouter = require('./routes/authentication');
+const cors = require('cors');
 
 const app = express();
 
+app.use(
+  cors({
+    origin: 'http://localhost:3000',
+    credentials: true
+  })
+);
 app.use(serveFavicon(path.join(__dirname, 'public/images', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(express.json());

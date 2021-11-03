@@ -5,43 +5,43 @@ const api = axios.create({
   withCredentials: true
 });
 
-const signup = (data) => {
-  api
+export const signup = (data) => {
+  return api
     .post('/auth/signup', data)
     .then((res) => res.data.user)
     .catch((err) => console.log(err));
 };
 
-const login = (data) => {
-  api
+export const login = (data) => {
+  return api
     .post('/auth/login', data)
     .then((res) => res.data.user)
     .catch((err) => console.log(err));
 };
 
-const upload = (data) => {
-  api
+export const upload = (data) => {
+  return api
     .post('/auth/upload', data)
     .then((res) => console.log(res))
     .catch((err) => console.log(err));
 };
 
-const edit = (data) => {
-  api
+export const edit = (data) => {
+  return api
     .post('/auth/edit', data)
     .then((res) => res.data.user)
     .catch((err) => console.log(err));
 };
 
-const logout = () => {
-  api
+export const logout = () => {
+  return api
     .get('/auth/logout')
     .then((res) => res.data.msg)
     .catch((err) => console.log(err));
 };
 
-const loggedin = () => {
-  api
+export const loggedin = () => {
+  return api
     .get('/auth/loggedin')
     .then((res) => res.data.user)
     .catch((err) => console.log(err));
